@@ -7,4 +7,4 @@ RUN rm -rf /etc/nginx/conf.d/default.conf
 # Copying expnse.conf to /etc/nginx/nginx.conf
 COPY expense.conf /etc/nginx/nginx.conf
 # Copying code/* to /usr/share/nginx/html/
-COPY code/* /usr/share/nginx/html/
+COPY code /usr/share/nginx/html/
