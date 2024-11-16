@@ -1,5 +1,6 @@
 FROM node:20
 EXPOSE 8080
+# connecting to mysql db server from backend
 ENV DB_HOST=mysql
 RUN useradd expense
 RUN mkdir /opt/server
