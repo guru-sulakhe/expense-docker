@@ -5,7 +5,7 @@ networks:
     name: expense
 volumes:
   mysql:
-    external: true # if true, you need to create manually
+    external: true # if true, you need to create volume expense,mysql manually 
 services:
   mysql:
     image: mysql:v1.0
