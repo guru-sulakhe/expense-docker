@@ -5,7 +5,7 @@ networks:
     name: expense
 volumes:
   mysql: # docker create volume mysql
-  #external: true # true if docker create volume expense or else false
+  external: true # true if docker create volume expense or else false
 services:
   mysql:
     image: mysql:v1.0
