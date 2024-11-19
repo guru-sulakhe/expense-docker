@@ -5,12 +5,15 @@ networks:
     name: expense
 volumes:
   mysql: # docker create volume mysql
+  external: true # true if docker create volume expense or else false
 services:
   mysql:
     image: mysql:v1.0
     container_name: mysql # --name mysql
     volumes: 
-      - mysql:/var/lib/mysql # -v volume-name:/path/in/container
+      - source: mysql
+        target: /var/lib/mysql
+        type: volume # -v volume-name:/path/in/container
   backend:
     image: backend:v1.0
     container_name: backend # --name backend
