@@ -1,4 +1,4 @@
-FROM node:20
+FROM node:20.18.1-alpine3.19
 EXPOSE 8080
 # connecting to mysql db server from backend
 ENV DB_HOST=mysql
