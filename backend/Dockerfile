@@ -12,4 +12,5 @@ COPY package.json .
 COPY *.js .
 # installing nodejs modules
 RUN npm install
+USER expense
 CMD ["node","index.js"]
