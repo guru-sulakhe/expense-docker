@@ -5,3 +5,6 @@ RUN adduser -r expense
 COPY scripts/*.sql /docker-entrypoint-initdb.d/
 RUN chown -R expense:expense /var/lib/mysql /var/run/mysqld /usr/sbin/mysqld
 USER expense
+
+#if you have any doubts of adding new instructions related to mysql 
+#visit to docker hub and search for mysql, there you can find the instructions related to mysql
