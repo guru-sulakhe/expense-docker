@@ -2,7 +2,7 @@
 FROM node:20.15.0-alpine3.20
 #Exposing port 8080
 EXPOSE 8080
-#Connecting to mysql
+#Connecting to mysql server through backend by creating env variable DB_HOST, connects to mysql container 
 ENV DB_HOST=mysql
 #Creating expense group, expense user and adding  expense user to expense group, creating and allowing ownership access for /opt/server directory to expense user
 RUN addgroup -S expense && adduser -S expense -G expense \
