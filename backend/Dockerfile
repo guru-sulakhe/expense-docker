@@ -30,3 +30,14 @@ CMD [ "node","index.js" ]
 #     Now we need to allow mysql and backend containers to run into expense network
 #     $ docker run -d -p 3306:3306 --name mysql --network expense mysql:v1.0
 #     $ docker run -d -p 8080:8080 --name backend --network expense backend:v1.0
+
+#     verifying whether mysql client is installed in backend or not
+#     $ docker exec -it backend bash
+#     # mysql
+#     # cat /etc/*release --> to know the OS information
+#     # apt update
+#     # apt install -y deault-mysql-client
+#     # mysql -h mysql -u root -pExpenseApp@1 ---> connecting to mysql from backend
+#     TO troubleshoot 
+#     $ docker exec -it backend bash
+#       # curl http://localhost:8080/transaction -->if it is success you will see result{[]}
