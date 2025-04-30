@@ -4,7 +4,7 @@ FROM node:20.15.0-alpine3.20
 EXPOSE 8080
 #Connecting to mysql
 ENV DB_HOST=mysql
-#Creating expense group, expense user and adding  expense user to expense group, creating and allowing access for /opt/server directory for expense user
+#Creating expense group, expense user and adding  expense user to expense group, creating and allowing ownership access for /opt/server directory to expense user
 RUN addgroup -S expense && adduser -S expense -G expense \
     && mkdir /opt/server \
     && chown expense:expense -R /opt/server
