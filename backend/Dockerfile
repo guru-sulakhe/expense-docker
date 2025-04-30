@@ -23,4 +23,10 @@ EXPOSE 8081
 #Running index.js file while creating the container 
 CMD [ "node","index.js" ]
 
-#NOTE: while creating mysql container, create with mysql as container name which will helps building connection between backend and mysql
+#NOTE: 
+#     while creating mysql container, create with mysql as container name which will helps building connection between backend and mysql.
+#     create a host network through which backend can connect to mysql
+#     $ docker network create expense
+#     Now we need to allow mysql and backend containers to run into expense network
+#     $ docker run -d -p 3306:3306 --name mysql --network expense mysql:v1.0
+#     $ docker run -d -p 8080:8080 --name backend --network expense backend:v1.0
