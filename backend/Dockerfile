@@ -20,6 +20,7 @@ RUN npm install
 USER expense
 #exposing port 8081
 EXPOSE 8081
+#Running index.js file while creating the container 
 CMD [ "node","index.js" ]
 
 #NOTE: while creating mysql container, create with mysql as container name which will helps building connection between backend and mysql
