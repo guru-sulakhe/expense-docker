@@ -4,7 +4,7 @@ networks:
   default:
     name: expense
 volumes:
-  mysql:
+  mysql: #$ docker volume create mysql
     # external: true # if true, you need to create volume expense,mysql manually 
 services:
   mysql:
@@ -36,3 +36,10 @@ services:
     - backend
     ports:
     - 80:80
+
+#NOTE;
+# make sure you build the respective images before running docker compose file in the server.
+# to run the docker compose
+# $ docker compose up -d
+# to deletet the docker compose
+# $ docker compose down
