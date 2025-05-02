@@ -4,6 +4,7 @@ FROM mysql:8.0
 RUN adduser -r expense
 #copying *.sql code to docker-entrypoint-initdb.d which will helps in loading schema.sql to the database
 COPY scripts/*.sql /docker-entrypoint-initdb.d/
+# allowing access of /var/lib/mysql /var/run/mysqld /usr/sbin/mysqld for only expense user
 RUN chown -R expense:expense /var/lib/mysql /var/run/mysqld /usr/sbin/mysqld
 USER expense
 
