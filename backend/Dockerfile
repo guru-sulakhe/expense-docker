@@ -16,7 +16,7 @@ COPY package.json .
 COPY *.js /opt/server/
 #installing system dependencies
 RUN npm install
-#allowing non-root access for the container and allowing only expense-user access for the non-root access in the dockerfile
+#allowing non-root access for the container and allowing only expense-user access for the non-root access in the dockerfile, from here normal user access the container
 USER expense
 #exposing port 8081
 EXPOSE 8081
@@ -39,5 +39,5 @@ CMD [ "node","index.js" ]
 #     # apt install -y deault-mysql-client
 #     # mysql -h mysql -u root -pExpenseApp@1 ---> connecting to mysql from backend
 #     TO troubleshoot 
-#     $ docker exec -it backend bash
+#     $ docker exec -it backend sh
 #       # curl http://localhost:8080/transaction -->if it is success you will see result{[]}

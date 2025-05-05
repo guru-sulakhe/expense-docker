@@ -4,6 +4,7 @@ RUN rm -rf /usr/share/nginx/html/index.html
 # Removing default images configuration from nginx
 RUN rm -rf /etc/nginx/nginx.conf
 RUN rm -rf /etc/nginx/conf.d/default.conf
+# allowing non-root access for nginx container
 RUN mkdir -p /var/cache/nginx/client_temp && \
         mkdir -p /var/cache/nginx/proxy_temp && \
         mkdir -p /var/cache/nginx/fastcgi_temp && \
