@@ -25,6 +25,10 @@ CMD [ "node","index.js" ]
 
 #NOTE: 
 #     while creating mysql container, create with mysql as container name which will helps building connection between backend and mysql.
+#     mysql  container can't be connected from backend container and container will not be created, due to the default docker network
+#     docker defaultly uses bridge network at which docker0(default bridge network ) acts as a bridge between two containers, which can't be useful for connection of containers.
+#     docker uses host network, where the containers can able to connect to the direct HOST.
+#     in the above code we are using ENV DB_HOST=mysql. which will be helpful for building connection between host network of mysql from backend.
 #     create a host network through which backend can connect to mysql
 #     $ docker network create expense
 #     Now we need to allow mysql and backend containers to run into expense network
