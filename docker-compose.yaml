@@ -7,7 +7,7 @@ volumes:
   mysql: #$ docker volume create mysql
     # external: true # if true, you need to create volume expense,mysql manually 
 services:
-  mysql:
+  mysql: 
     # image: mysql:v1.0
     image: guru1188/mysql:v1.0
     container_name: mysql # --name mysql
@@ -17,7 +17,7 @@ services:
       - MYSQL_PASSWORD=ExpenseApp@1
       - MYSQL_DATABASE=transactions
 
-    volumes:
+    volumes: #Named Volume Creation
     - source: mysql
       target: /var/lib/mysql
       type: volume # -v volume-name:/path/in/container
